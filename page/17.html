@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puffin Foundation Resources</title>
+
+    <meta name="title" content="Puffin Foundation Resources">
+    <meta name="description" content="Puffin Foundation Resources - Latest updates and news">
+    <link rel="canonical" href="https://newsseid.netlify.app/">
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4f9cf9">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newsseid.netlify.app/">
+    <meta property="og:title" content="Puffin Foundation Resources">
+    <meta property="og:description" content="Puffin Foundation Resources - Latest updates and news">
+    <meta property="og:site_name" content="Puffin Foundation Resources">
+    <meta property="og:image" content="https://newsseid.netlify.app/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://newsseid.netlify.app/">
+    <meta name="twitter:title" content="Puffin Foundation Resources">
+    <meta name="twitter:description" content="Puffin Foundation Resources - Latest updates and news">
+    <meta name="twitter:image" content="https://newsseid.netlify.app/logo.png">
+
+    <link rel="icon" href="https://newsseid.netlify.app/assets/favicon.ico?v=1" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="https://newsseid.netlify.app/assets/img/favicon-magazine.svg?v=1">
+    <link rel="shortcut icon" href="https://newsseid.netlify.app/assets/favicon.ico?v=1" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://newsseid.netlify.app/assets/img/favicon-magazine.svg?v=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+    /* ── PULSE THEME ── */
+    :root{
+      --bg:#07090d;--surface:#0d1117;--surface2:#141b24;--surface3:#1a2333;
+      --border:#1e2d3d;--border2:#253545;
+      --accent:#4f9cf9;--accent2:#f97316;--green:#22c55e;--purple:#a78bfa;
+      --text:#e2eaf4;--muted:#4a5e72;--muted2:#7a90a4;--gold:#fbbf24;
+      --mono:'JetBrains Mono',monospace;--display:'Bebas Neue',sans-serif;--body:'DM Sans',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;line-height:1.5}
+    body{
+      background:var(--bg);color:var(--text);font-family:var(--body);
+      min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;
+    }
+    a{text-decoration:none;color:inherit;transition:.15s}
+    img{max-width:100%;height:auto}
+
+    /* BG GLOW */
+    body::before{
+      content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+      background:
+        radial-gradient(ellipse 50% 35% at 10% 0%,rgba(79,156,249,.07) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 30% at 90% 90%,rgba(249,115,22,.06) 0%,transparent 60%);
+    }
+
+    /* ── HEADER ── */
+    #header-outer{position:sticky;top:0;z-index:100}
+    #header-wrap{
+      background:rgba(7,9,13,.93);backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+      padding:0 24px;height:58px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .blog-title{font-family:var(--display);font-size:24px;letter-spacing:.08em;display:flex;align-items:center;gap:8px}
+    .blog-title a{color:var(--text)}
+    .logo-icon{
+      width:30px;height:30px;border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),var(--purple));
+      display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;
+    }
+    #navmenu-wrap{display:none} /* hidden — nav is in header */
+    .header-nav{display:flex;gap:2px;align-items:center}
+    .header-nav a{
+      font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+      color:var(--muted2);padding:6px 10px;border-radius:5px;
+      transition:all .15s;text-transform:uppercase;
+    }
+    .header-nav a:hover{color:var(--accent);background:rgba(79,156,249,.08)}
+
+    /* ── SORT BAR ── */
+    .pulse-sort-bar{
+      background:var(--surface);border-bottom:1px solid var(--border);
+      padding:10px 24px;display:flex;gap:6px;align-items:center;
+      position:relative;z-index:1;overflow-x:auto;scrollbar-width:none;
+    }
+    .pulse-sort-bar::-webkit-scrollbar{display:none}
+    .sort-btn{
+      background:var(--surface2);border:1px solid var(--border);
+      color:var(--muted2);padding:5px 14px;border-radius:20px;
+      font-family:var(--mono);font-size:10px;cursor:default;
+      white-space:nowrap;letter-spacing:.04em;
+    }
+    .sort-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+    .result-count{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+    /* ── LAYOUT ── */
+    #wrapper{
+      position:relative;z-index:1;
+      max-width:980px;width:100%;margin:0 auto;
+      padding:24px;display:flex;gap:28px;align-items:flex-start;flex:1;
+    }
+    #content-wrap{flex:1 1 0;min-width:0}
+    #sidebar-wrap{flex:0 0 280px;width:280px}
+
+    /* ── NOTICE ── */
+    .pulse-notice{
+      background:rgba(79,156,249,.07);border:1px solid rgba(79,156,249,.2);
+      border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:11px;
+      color:var(--accent);line-height:1.7;margin-bottom:16px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar-sticky{position:sticky;top:78px}
+    .sidebar-widget{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:12px;padding:16px 18px;margin-bottom:16px;
+    }
+    .widget h2.title,.normalwidget-title h2.title{
+      font-family:var(--display);font-size:18px;letter-spacing:.06em;
+      color:var(--text);margin-bottom:14px;padding-bottom:10px;
+      border-bottom:1px solid var(--border);
+      display:flex;align-items:center;gap:8px;
+    }
+    .widget h2.title::before,.normalwidget-title h2.title::before{
+      content:'';width:3px;height:18px;border-radius:2px;
+      background:linear-gradient(to bottom,var(--accent),var(--purple));flex-shrink:0;
+    }
+    /* Popular posts sidebar */
+    .popular-posts ul{list-style:none;padding:0;margin:0}
+    .popular-posts li{
+      display:flex;align-items:flex-start;gap:10px;
+      padding:11px 0;border-bottom:1px solid var(--border);
+    }
+    .popular-posts li:last-child{border-bottom:none;padding-bottom:0}
+    .popular-posts li:first-child{padding-top:0}
+    .pop-num{
+      font-family:var(--mono);font-size:18px;font-weight:700;
+      color:var(--border2);flex-shrink:0;line-height:1;min-width:24px;padding-top:1px;
+      transition:color .15s;
+    }
+    .popular-posts li:hover .pop-num{color:var(--accent)}
+    .pop-content{flex:1;min-width:0}
+    .pop-content h3{margin:0 0 4px}
+    .pop-content h3 a{
+      font-size:13px;font-weight:600;color:var(--muted2);line-height:1.4;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+      transition:color .15s;
+    }
+    .popular-posts li:hover .pop-content h3 a{color:var(--text)}
+    .pop-meta{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:2px}
+    /* hide thumbnail in sidebar — pulse uses number style */
+    .popular-posts .img-thumbnail{display:none}
+
+    /* ── AD SLOTS ── */
+    .rudi-ad-slot{margin:14px 0;padding:0;overflow:hidden}
+    .rudi-ad-slot[data-lazy-ad]{min-height:0}
+
+    /* ── LAZY LOAD & SPINNERS ── */
+    .lazyload{opacity:0;transition:opacity .3s}
+    .lazyload.loaded{opacity:1}
+    .lazy-loading{position:absolute;top:0;left:0;width:100%;height:100%;background:var(--surface2);display:flex;align-items:center;justify-content:center;z-index:1}
+    .lazy-loading::before{content:"";width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:pulse-spin .8s linear infinite}
+    @keyframes pulse-spin{to{transform:rotate(360deg)}}
+    .lazyload.loaded + .lazy-loading{display:none}
+
+    /* ── FLOATING AD ── */
+    .rudi-floating-ad{position:fixed;left:0;right:0;bottom:16px;margin:0 auto;z-index:9999;width:min(340px,calc(100vw - 24px));max-height:80vh;background:var(--surface);border:1px solid var(--border2);border-radius:12px;box-shadow:0 14px 38px rgba(0,0,0,.5);overflow:auto}
+    .rudi-floating-ad.hidden{display:none}
+    .rudi-floating-ad-close{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;border-radius:999px;background:rgba(255,255,255,.15);color:#fff;font-size:18px;line-height:1;cursor:pointer;z-index:2}
+    .rudi-floating-ad-content{padding:0}
+
+    /* ── FOOTER ── */
+    #footer-outer{
+      background:var(--surface);border-top:1px solid var(--border);
+      padding:28px 24px;position:relative;z-index:1;margin-top:auto;
+    }
+    #footer-content{max-width:980px;margin:0 auto;text-align:center}
+    .footer-text{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;margin-bottom:12px}
+    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px}
+    .footer-links a{
+      font-family:var(--mono);font-size:10px;color:var(--muted);
+      padding:4px 10px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;
+      transition:color .15s;border:1px solid transparent;
+    }
+    .footer-links a:hover{color:var(--accent);border-color:var(--border2)}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:720px){
+      #wrapper{flex-direction:column;padding:16px;gap:20px}
+      #sidebar-wrap{flex:none;width:100%}
+      .sidebar-sticky{position:static}
+      #header-wrap{padding:0 16px}
+      .header-nav a{display:none}
+      .header-nav a:first-child{display:block}
+    }
+
+    
+    </style>
+
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Puffin Foundation Resources", "potentialAction": {"@type": "SearchAction", "query-input": "required name=search_term_string", "target": "https://newsseid.netlify.app/?s={search_term_string}"}, "url": "https://newsseid.netlify.app/"}</script>
+    
+    
+</head>
+
+<body class="is-home h-feed">
+
+    <header id="header-outer">
+        <div id="header-wrap">
+            <h2 class="blog-title">
+                <div class="logo-icon">🐦</div>
+                <a href="https://newsseid.netlify.app/">Puffin Foundation Resources</a>
+            </h2>
+            <nav class="header-nav">
+                <a href="https://newsseid.netlify.app/">Home</a>
+                <a href="https://newsseid.netlify.app/page/contact">Contact</a>
+                <a href="https://newsseid.netlify.app/page/privacy">Privacy</a>
+                <a href="https://newsseid.netlify.app/page/dmca">DMCA</a>
+            </nav>
+        </div>
+        
+        <div id="navmenu-wrap" style="display:none">
+            <div class="navmenu"><nav class="navmenu-content"><ul></ul></nav></div>
+        </div>
+    </header>
+
+    
+<div class="pulse-sort-bar">
+    <span class="sort-btn active">Latest</span>
+    <span class="sort-btn">News</span>
+    <div class="result-count">10 posts</div>
+</div>
+
+
+    <main id="wrapper">
+        <section id="content-wrap">
+            
+<div class="main-content section" id="main-content">
+
+    <div class="pulse-notice">
+        ✦ <b>Puffin Foundation Resources</b> · Latest updates &amp; news
+    </div>
+
+    <div class="pulse-posts-list">
+
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/unveiling-the-life-of-juana-manuela-marroqu-n-santos-mystery-of-the-spanish-convent" class="u-url p-name">Unveiling The Life Of Juana Manuela Marroquín Santos: Mystery Of The Spanish Convent</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In recent years, a little-known figure from Spanish history has been gain...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">01</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/unveiling-the-life-of-juana-manuela-marroqu-n-santos-mystery-of-the-spanish-convent">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/the-fascinating-story-of-a-rebellious-nun-juana-manuela-marroqu-n-santos" class="u-url p-name">The Fascinating Story Of A Rebellious Nun: Juana Manuela Marroquín Santos</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; The 17th century saw numerous tales of women fighting against societal no...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">02</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/the-fascinating-story-of-a-rebellious-nun-juana-manuela-marroqu-n-santos">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/sisters-in-secret-juana-manuela-marroqu-n-santos-hidden-world-revealed" class="u-url p-name">Sisters In Secret: Juana Manuela Marroquín Santos&#39; Hidden World Revealed</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In recent years, the world has witnessed a surge in the exploration and u...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">03</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/sisters-in-secret-juana-manuela-marroqu-n-santos-hidden-world-revealed">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/unraveling-the-enigmatic-life-of-sister-marroqu-n-juana-manuela-santos-journey" class="u-url p-name">Unraveling The Enigmatic Life Of Sister Marroquín: Juana Manuela Santos&#39; Journey</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In recent years, the life and legacy of Sister Marroquín have captivated ...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">04</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/unraveling-the-enigmatic-life-of-sister-marroqu-n-juana-manuela-santos-journey">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/juana-manuela-marroqu-n-santos-a-rebel-nun-s-extraordinary-life-of-secrets-and-faith" class="u-url p-name">Juana Manuela Marroquín Santos: A Rebel Nun&#39;s Extraordinary Life Of Secrets And Faith</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; As the world grapples with issues of faith, freedom, and equality, the ex...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">05</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/juana-manuela-marroqu-n-santos-a-rebel-nun-s-extraordinary-life-of-secrets-and-faith">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/unraveling-the-brian-tyler-cohen-relationship-drama" class="u-url p-name">Unraveling The Brian Tyler Cohen Relationship Drama</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In a world where social media platforms and online content creators domin...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">06</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/unraveling-the-brian-tyler-cohen-relationship-drama">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/uncovering-the-truth-behind-brian-tyler-cohen-s-relationship" class="u-url p-name">Uncovering The Truth Behind Brian Tyler Cohen&#39;s Relationship</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In recent times, social media has been abuzz with discussions about onlin...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">07</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/uncovering-the-truth-behind-brian-tyler-cohen-s-relationship">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/brian-tyler-cohen-s-relationship-secrets-exposed-to-the-public" class="u-url p-name">Brian Tyler Cohen&#39;s Relationship Secrets Exposed To The Public</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; In recent years, the topic of relationship dynamics has become a hot subj...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">08</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/brian-tyler-cohen-s-relationship-secrets-exposed-to-the-public">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/the-mysterious-world-of-brian-tyler-cohen-s-romantic-connection" class="u-url p-name">The Mysterious World Of Brian Tyler Cohen&#39;s Romantic Connection</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; As the world becomes increasingly interconnected, the ways in which peopl...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">09</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/the-mysterious-world-of-brian-tyler-cohen-s-romantic-connection">Read →</a>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="pulse-post-item">
+            <div class="pulse-post-main">
+                <div class="pulse-post-category">news</div>
+                <div class="pulse-post-title">
+                    <a href="https://newsseid.netlify.app/brian-tyler-cohen-s-relationship-reveal-what-you-need-to-know" class="u-url p-name">Brian Tyler Cohen&#39;s Relationship Reveal: What You Need To Know</a>
+                </div>
+                <div class="pulse-post-snippet">atOptions = { &#39;key&#39; : &#39;7d19a9f5493ddd6caf062890dc7c4ca9&#39;, &#39;format&#39; : &#39;iframe&#39;, &#39;height&#39; : 250, &#39;width&#39; : 300, &#39;params&#39; : {} }; As the world becomes increasingly digital, relationships are evolving, an...</div>
+                <div class="pulse-post-meta">
+                    <span class="pulse-meta-tag pulse-meta-author">Admin</span>
+                    <time class="pulse-meta-tag pulse-meta-date dt-published" datetime="2026-05-18T06:15:16+00:00">May 18, 2026</time>
+                </div>
+            </div>
+            <div class="pulse-post-right">
+                <span class="pulse-post-num">10</span>
+                <a class="pulse-btn-read" href="https://newsseid.netlify.app/brian-tyler-cohen-s-relationship-reveal-what-you-need-to-know">Read →</a>
+            </div>
+        </div>
+
+        
+        
+
+        
+    </div>
+
+    <div class="pulse-pagination">
+        
+            <a href="https://newsseid.netlify.app/page/18.html" class="pulse-btn-page">⬇ Next Page</a>
+        
+    </div>
+
+</div>
+
+<style>
+.pulse-posts-list{display:flex;flex-direction:column;gap:8px}
+.pulse-post-item{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:16px 18px;
+    display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;
+    transition:all .18s;position:relative;overflow:hidden;
+}
+.pulse-post-item:hover{
+    background:var(--surface2);border-color:var(--border2);
+    transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,.3);
+}
+.pulse-post-item::after{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:var(--accent);opacity:0;transition:opacity .2s;border-radius:3px 0 0 3px;
+}
+.pulse-post-item:hover::after{opacity:1}
+.pulse-post-main{min-width:0}
+.pulse-post-category{
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent2);margin-bottom:6px;display:flex;align-items:center;gap:6px;
+}
+.pulse-post-category::before{
+    content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent2);
+}
+.pulse-post-title{
+    font-size:15px;font-weight:600;color:var(--text);
+    line-height:1.35;margin-bottom:8px;
+}
+.pulse-post-title a{
+    color:var(--text);display:-webkit-box;-webkit-line-clamp:2;
+    -webkit-box-orient:vertical;overflow:hidden;transition:color .15s;
+}
+.pulse-post-item:hover .pulse-post-title a{color:var(--accent)}
+.pulse-post-snippet{
+    font-size:13px;color:var(--muted2);line-height:1.6;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    margin-bottom:10px;
+}
+.pulse-post-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pulse-meta-tag{
+    font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:4px;
+    white-space:nowrap;letter-spacing:.03em;
+}
+.pulse-meta-author{background:rgba(79,156,249,.1);color:var(--accent);border:1px solid rgba(79,156,249,.2)}
+.pulse-meta-date{background:rgba(122,144,164,.1);color:var(--muted2);border:1px solid rgba(122,144,164,.15)}
+.pulse-post-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+.pulse-post-num{
+    font-family:var(--mono);font-size:22px;font-weight:700;
+    color:var(--border2);line-height:1;letter-spacing:-.02em;user-select:none;
+}
+.pulse-btn-read{
+    background:linear-gradient(135deg,var(--accent),var(--purple));
+    color:#fff;border:none;padding:7px 16px;border-radius:7px;
+    font-family:var(--mono);font-size:11px;font-weight:700;
+    cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.pulse-btn-read:hover{box-shadow:0 3px 14px rgba(79,156,249,.5);transform:translateY(-1px);color:#fff}
+.pulse-pagination{text-align:center;margin-top:20px}
+.pulse-btn-page{
+    background:var(--surface2);border:1px solid var(--border2);color:var(--muted2);
+    padding:10px 28px;border-radius:8px;font-family:var(--mono);font-size:12px;
+    transition:all .2s;display:inline-block;
+}
+.pulse-btn-page:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:480px){
+    .pulse-post-right{display:none}
+    .pulse-post-item{grid-template-columns:1fr}
+}
+</style>
+
+        </section>
+
+        <aside id="sidebar-wrap">
+            <div class="sidebar section sidebar-sticky" id="sidebar">
+                
+                <div class="sidebar-widget widget HTML">
+                    <h2 class="title">Popular Posts</h2>
+                    <div class="widget-content popular-posts">
+                        <ul>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">01</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://newsseid.netlify.app/what-is-behind-the-success-of-michael-che-s-gorgeous-partner-tatiana-che-in-comedy-world">What Is Behind The Success Of Michael Che&#39;s Gorgeous Partner Tatiana Che In Comedy World</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">02</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://newsseid.netlify.app/unlock-the-mystique-surrounding-michael-che-s-stunning-wife-tatiana-che-in-comedy-scene">Unlock The Mystique Surrounding Michael Che&#39;s Stunning Wife Tatiana Che In Comedy Scene</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">03</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://newsseid.netlify.app/tatiana-che-the-charming-smile-of-michael-che-s-spouse-in-comedy-world-spotlight">Tatiana Che: The Charming Smile Of Michael Che&#39;s Spouse In Comedy World Spotlight</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">04</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://newsseid.netlify.app/unraveling-the-mystery-of-michael-che-s-wife-tatiana-a-glimpse-into-their-life">Unraveling The Mystery Of Michael Che&#39;s Wife Tatiana: A Glimpse Into Their Life</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">05</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://newsseid.netlify.app/the-mysterious-life-of-tatiana-che-what-we-know-about-michael-che-s-wife">The Mysterious Life Of Tatiana Che: What We Know About Michael Che&#39;s Wife</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nav widget -->
+                <div class="sidebar-widget widget HTML">
+                    <h2 class="title">Navigation</h2>
+                    <nav style="display:flex;flex-direction:column;gap:4px">
+                        <a href="https://newsseid.netlify.app/" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Home</a>
+                        <a href="https://newsseid.netlify.app/page/contact" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Contact</a>
+                        <a href="https://newsseid.netlify.app/page/privacy" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Privacy</a>
+                        <a href="https://newsseid.netlify.app/page/dmca" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;DMCA</a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    
+
+    <footer id="footer-outer">
+        <div id="footer-content">
+            <div class="footer-text">&copy; 2026 PUFFIN FOUNDATION RESOURCES · ALL RIGHTS RESERVED</div>
+            <div class="footer-links">
+                <a href="https://newsseid.netlify.app/">Home</a>
+                <a href="https://newsseid.netlify.app/page/contact">Contact</a>
+                <a href="https://newsseid.netlify.app/page/privacy">Privacy Policy</a>
+                <a href="https://newsseid.netlify.app/page/dmca">DMCA</a>
+                <a href="https://newsseid.netlify.app/sitemap.html">Sitemap HTML</a>
+                <a href="https://newsseid.netlify.app/sitemap.xml">Sitemap XML</a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function decodeBase64(value) {
+                try { return window.atob(value || ''); } catch (e) { return ''; }
+            }
+            function mountHtml(target, html) {
+                if (!target || typeof html !== 'string') return;
+                target.innerHTML = html;
+                Array.from(target.querySelectorAll("script")).forEach(function(oldScript) {
+                    var newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(function(attr) { newScript.setAttribute(attr.name, attr.value); });
+                    if (oldScript.textContent) newScript.textContent = oldScript.textContent;
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            }
+            function initLazyAdSlots() {
+                var adSlots = Array.from(document.querySelectorAll('[data-lazy-ad][data-ad-html]'));
+                if (adSlots.length === 0) return;
+                if ('IntersectionObserver' in window) {
+                    var observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (!entry.isIntersecting) return;
+                            var slot = entry.target;
+                            mountHtml(slot, decodeBase64(slot.dataset.adHtml || ''));
+                            observer.unobserve(slot);
+                        });
+                    }, { rootMargin: '200px 0px' });
+                    adSlots.forEach(function(slot) { observer.observe(slot); });
+                } else {
+                    adSlots.forEach(function(slot) { mountHtml(slot, decodeBase64(slot.dataset.adHtml || '')); });
+                }
+            }
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            if (lazyImage.dataset.src) {
+                                lazyImage.src = lazyImage.dataset.src;
+                                lazyImage.onload = function() { lazyImage.classList.add("loaded"); };
+                            }
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                lazyImages.forEach(function(lazyImage) { lazyImageObserver.observe(lazyImage); });
+            } else {
+                lazyImages.forEach(function(lazyImage) {
+                    if (lazyImage.dataset.src) { lazyImage.src = lazyImage.dataset.src; lazyImage.classList.add("loaded"); }
+                });
+            }
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(initLazyAdSlots, { timeout: 1800 });
+            } else { window.setTimeout(initLazyAdSlots, 250); }
+
+            var trackerNode = document.getElementById('js-tracker-slot');
+            if (trackerNode && trackerNode.dataset.trackerHtml) {
+                var runTracker = function() { mountHtml(trackerNode, decodeBase64(trackerNode.dataset.trackerHtml || '')); };
+                if ('requestIdleCallback' in window) { window.requestIdleCallback(runTracker, { timeout: 2500 }); }
+                else { window.setTimeout(runTracker, 1200); }
+            }
+
+            var floatingHtml = "";
+            var floatingRoot = document.getElementById('rudi-floating-ad');
+            var floatingContent = document.getElementById('rudi-floating-ad-content');
+            var floatingClose = document.getElementById('rudi-floating-ad-close');
+            if (floatingRoot && floatingContent && typeof floatingHtml === 'string' && floatingHtml.trim() !== '') {
+                mountHtml(floatingContent, floatingHtml);
+                floatingRoot.classList.remove('hidden');
+                if (floatingClose) { floatingClose.addEventListener('click', function() { floatingRoot.classList.add('hidden'); }); }
+            }
+
+            var sosHtml = "";
+            var sosUrl = "";
+            if (typeof sosHtml === 'string' && sosHtml.trim() !== '') {
+                var sosHolder = document.createElement('div');
+                sosHolder.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;text-align:center;';
+                document.body.appendChild(sosHolder);
+                mountHtml(sosHolder, sosHtml);
+            } else if (typeof sosUrl === 'string' && sosUrl.trim() !== '') {
+                if (!document.querySelector('script[src="' + sosUrl + '"]')) {
+                    var sosScript = document.createElement('script');
+                    sosScript.src = sosUrl; sosScript.async = true;
+                    document.body.appendChild(sosScript);
+                }
+            }
+        });
+    </script>
+
+    
+
+</body>
+</html>
