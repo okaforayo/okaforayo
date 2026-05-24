@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puffin Foundation Resources</title>
+
+    <meta name="title" content="Puffin Foundation Resources">
+    <meta name="description" content="Puffin Foundation Resources - Latest updates and news">
+    <link rel="canonical" href="https://okaforayo.pages.dev/">
+    <link rel="alternate" hreflang="en-us" href="https://okaforayo.pages.dev/">
+    <link rel="alternate" hreflang="x-default" href="https://okaforayo.pages.dev/">
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4f9cf9">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://okaforayo.pages.dev/">
+    <meta property="og:title" content="Puffin Foundation Resources">
+    <meta property="og:description" content="Puffin Foundation Resources - Latest updates and news">
+    <meta property="og:site_name" content="Puffin Foundation Resources">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://okaforayo.pages.dev/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://okaforayo.pages.dev/">
+    <meta name="twitter:title" content="Puffin Foundation Resources">
+    <meta name="twitter:description" content="Puffin Foundation Resources - Latest updates and news">
+    <meta name="twitter:image" content="https://okaforayo.pages.dev/logo.png">
+
+    <link rel="icon" href="https://okaforayo.pages.dev/assets/favicon.ico?v=1" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="https://okaforayo.pages.dev/assets/img/favicon-magazine.svg?v=1">
+    <link rel="shortcut icon" href="https://okaforayo.pages.dev/assets/favicon.ico?v=1" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://okaforayo.pages.dev/assets/img/favicon-magazine.svg?v=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+    /* ── PULSE THEME ── */
+    :root{
+      --bg:#07090d;--surface:#0d1117;--surface2:#141b24;--surface3:#1a2333;
+      --border:#1e2d3d;--border2:#253545;
+      --accent:#4f9cf9;--accent2:#f97316;--green:#22c55e;--purple:#a78bfa;
+      --text:#e2eaf4;--muted:#4a5e72;--muted2:#7a90a4;--gold:#fbbf24;
+      --mono:'JetBrains Mono',monospace;--display:'Bebas Neue',sans-serif;--body:'DM Sans',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;line-height:1.5}
+    body{
+      background:var(--bg);color:var(--text);font-family:var(--body);
+      min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;
+    }
+    a{text-decoration:none;color:inherit;transition:.15s}
+    img{max-width:100%;height:auto}
+
+    /* BG GLOW */
+    body::before{
+      content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+      background:
+        radial-gradient(ellipse 50% 35% at 10% 0%,rgba(79,156,249,.07) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 30% at 90% 90%,rgba(249,115,22,.06) 0%,transparent 60%);
+    }
+
+    /* ── HEADER ── */
+    #header-outer{position:sticky;top:0;z-index:100}
+    #header-wrap{
+      background:rgba(7,9,13,.93);backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+      padding:0 24px;height:58px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .blog-title{font-family:var(--display);font-size:24px;letter-spacing:.08em;display:flex;align-items:center;gap:8px}
+    .blog-title a{color:var(--text)}
+    .logo-icon{
+      width:30px;height:30px;border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),var(--purple));
+      display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;
+    }
+    #navmenu-wrap{display:none} /* hidden — nav is in header */
+    .header-nav{display:flex;gap:2px;align-items:center}
+    .header-nav a{
+      font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+      color:var(--muted2);padding:6px 10px;border-radius:5px;
+      transition:all .15s;text-transform:uppercase;
+    }
+    .header-nav a:hover{color:var(--accent);background:rgba(79,156,249,.08)}
+
+    /* ── SORT BAR ── */
+    .pulse-sort-bar{
+      background:var(--surface);border-bottom:1px solid var(--border);
+      padding:10px 24px;display:flex;gap:6px;align-items:center;
+      position:relative;z-index:1;overflow-x:auto;scrollbar-width:none;
+    }
+    .pulse-sort-bar::-webkit-scrollbar{display:none}
+    .sort-btn{
+      background:var(--surface2);border:1px solid var(--border);
+      color:var(--muted2);padding:5px 14px;border-radius:20px;
+      font-family:var(--mono);font-size:10px;cursor:default;
+      white-space:nowrap;letter-spacing:.04em;
+    }
+    .sort-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+    .result-count{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+    /* ── LAYOUT ── */
+    #wrapper{
+      position:relative;z-index:1;
+      max-width:980px;width:100%;margin:0 auto;
+      padding:24px;display:flex;gap:28px;align-items:flex-start;flex:1;
+    }
+    #content-wrap{flex:1 1 0;min-width:0}
+    #sidebar-wrap{flex:0 0 280px;width:280px}
+
+    /* ── NOTICE ── */
+    .pulse-notice{
+      background:rgba(79,156,249,.07);border:1px solid rgba(79,156,249,.2);
+      border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:11px;
+      color:var(--accent);line-height:1.7;margin-bottom:16px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar-sticky{position:sticky;top:78px}
+    .sidebar-widget{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:12px;padding:16px 18px;margin-bottom:16px;
+    }
+    .widget h2.title,.normalwidget-title h2.title{
+      font-family:var(--display);font-size:18px;letter-spacing:.06em;
+      color:var(--text);margin-bottom:14px;padding-bottom:10px;
+      border-bottom:1px solid var(--border);
+      display:flex;align-items:center;gap:8px;
+    }
+    .widget h2.title::before,.normalwidget-title h2.title::before{
+      content:'';width:3px;height:18px;border-radius:2px;
+      background:linear-gradient(to bottom,var(--accent),var(--purple));flex-shrink:0;
+    }
+    /* Popular posts sidebar */
+    .popular-posts ul{list-style:none;padding:0;margin:0}
+    .popular-posts li{
+      display:flex;align-items:flex-start;gap:10px;
+      padding:11px 0;border-bottom:1px solid var(--border);
+    }
+    .popular-posts li:last-child{border-bottom:none;padding-bottom:0}
+    .popular-posts li:first-child{padding-top:0}
+    .pop-num{
+      font-family:var(--mono);font-size:18px;font-weight:700;
+      color:var(--border2);flex-shrink:0;line-height:1;min-width:24px;padding-top:1px;
+      transition:color .15s;
+    }
+    .popular-posts li:hover .pop-num{color:var(--accent)}
+    .pop-content{flex:1;min-width:0}
+    .pop-content h3{margin:0 0 4px}
+    .pop-content h3 a{
+      font-size:13px;font-weight:600;color:var(--muted2);line-height:1.4;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+      transition:color .15s;
+    }
+    .popular-posts li:hover .pop-content h3 a{color:var(--text)}
+    .pop-meta{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:2px}
+    /* hide thumbnail in sidebar — pulse uses number style */
+    .popular-posts .img-thumbnail{display:none}
+
+    /* ── AD SLOTS ── */
+    .rudi-ad-slot{margin:14px 0;padding:0;overflow:hidden}
+    .rudi-ad-slot[data-lazy-ad]{min-height:0}
+
+    /* ── LAZY LOAD & SPINNERS ── */
+    .lazyload{opacity:0;transition:opacity .3s}
+    .lazyload.loaded{opacity:1}
+    .lazy-loading{position:absolute;top:0;left:0;width:100%;height:100%;background:var(--surface2);display:flex;align-items:center;justify-content:center;z-index:1}
+    .lazy-loading::before{content:"";width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:pulse-spin .8s linear infinite}
+    @keyframes pulse-spin{to{transform:rotate(360deg)}}
+    .lazyload.loaded + .lazy-loading{display:none}
+
+    /* ── FLOATING AD ── */
+    .rudi-floating-ad{position:fixed;left:0;right:0;bottom:16px;margin:0 auto;z-index:9999;width:min(340px,calc(100vw - 24px));max-height:80vh;background:var(--surface);border:1px solid var(--border2);border-radius:12px;box-shadow:0 14px 38px rgba(0,0,0,.5);overflow:auto}
+    .rudi-floating-ad.hidden{display:none}
+    .rudi-floating-ad-close{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;border-radius:999px;background:rgba(255,255,255,.15);color:#fff;font-size:18px;line-height:1;cursor:pointer;z-index:2}
+    .rudi-floating-ad-content{padding:0}
+
+    /* ── FOOTER ── */
+    #footer-outer{
+      background:var(--surface);border-top:1px solid var(--border);
+      padding:28px 24px;position:relative;z-index:1;margin-top:auto;
+    }
+    #footer-content{max-width:980px;margin:0 auto;text-align:center}
+    .footer-text{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;margin-bottom:12px}
+    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px}
+    .footer-links a{
+      font-family:var(--mono);font-size:10px;color:var(--muted);
+      padding:4px 10px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;
+      transition:color .15s;border:1px solid transparent;
+    }
+    .footer-links a:hover{color:var(--accent);border-color:var(--border2)}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:720px){
+      #wrapper{flex-direction:column;padding:16px;gap:20px}
+      #sidebar-wrap{flex:none;width:100%}
+      .sidebar-sticky{position:static}
+      #header-wrap{padding:0 16px}
+      .header-nav a{display:none}
+      .header-nav a:first-child{display:block}
+    }
+
+    
+    </style>
+
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Puffin Foundation Resources", "potentialAction": {"@type": "SearchAction", "query-input": "required name=search_term_string", "target": {"@type": "EntryPoint", "urlTemplate": "https://okaforayo.pages.dev/?s={search_term_string}"}}, "url": "https://okaforayo.pages.dev/"}</script>
+    
+    
+</head>
+
+<body class="is-home h-feed">
+
+    <header id="header-outer">
+        <div id="header-wrap">
+            <h2 class="blog-title">
+                <div class="logo-icon">🐦</div>
+                <a href="https://okaforayo.pages.dev/">Puffin Foundation Resources</a>
+            </h2>
+            <nav class="header-nav">
+                <a href="https://okaforayo.pages.dev/">Home</a>
+                <a href="https://okaforayo.pages.dev/page/contact">Contact</a>
+                <a href="https://okaforayo.pages.dev/page/privacy">Privacy</a>
+                <a href="https://okaforayo.pages.dev/page/about">About</a>
+                <a href="https://okaforayo.pages.dev/page/dmca">DMCA</a>
+            </nav>
+        </div>
+        
+        <div id="navmenu-wrap" style="display:none">
+            <div class="navmenu"><nav class="navmenu-content"><ul></ul></nav></div>
+        </div>
+    </header>
+
+    
+<div class="pulse-sort-bar">
+    <span class="sort-btn active">Latest</span>
+    <span class="sort-btn">News</span>
+    <div class="result-count">10 posts</div>
+</div>
+
+
+    <main id="wrapper">
+        <section id="content-wrap">
+            
+<div class="main-content section" id="main-content">
+
+    <div class="hg-grid">
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/uncovering-the-dark-side-of-american-history-david-dahmer" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts1.mm.bing.net/th?id=OIP.GhdBXMygj1rlT-_RVtWblAHaMW&amp;pid=15.1" alt="Uncovering The Dark Side Of American History David Dahmer" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/uncovering-the-dark-side-of-american-history-david-dahmer" class="u-url p-name">Uncovering The Dark Side Of American History David Dahmer</a>
+                </h2>
+                <p class="hg-card-excerpt">Uncovering the Dark Side of American History David Dahmer: Shedding Light on a Challenging Topic The recent surge in popularity of exploring American history&#39;s...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/uncovering-the-dark-side-of-american-history-david-dahmer">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/the-shocking-true-story-behind-america-s-most-notorious-killers-david-dahmer" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts2.mm.bing.net/th?id=OIP.H5OWgBoe2qzGCZMJsUxI-wAAAA&amp;pid=15.1" alt="The Shocking True Story Behind America&#39;s Most Notorious Killers David Dahmer" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/the-shocking-true-story-behind-america-s-most-notorious-killers-david-dahmer" class="u-url p-name">The Shocking True Story Behind America&#39;s Most Notorious Killers David Dahmer</a>
+                </h2>
+                <p class="hg-card-excerpt">The Shocking True Story Behind America&#39;s Most Notorious Killers David Dahmer In recent years, the study of notorious killers has garnered significant attention...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/the-shocking-true-story-behind-america-s-most-notorious-killers-david-dahmer">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/what-made-david-dahmer-america-s-most-infamous-serial-killer" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts2.mm.bing.net/th?id=OIP.lA2LcD1LicOSSbftiKZ8sAAAAA&amp;pid=15.1" alt="What Made David Dahmer America&#39;s Most Infamous Serial Killer" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/what-made-david-dahmer-america-s-most-infamous-serial-killer" class="u-url p-name">What Made David Dahmer America&#39;s Most Infamous Serial Killer</a>
+                </h2>
+                <p class="hg-card-excerpt">What Made David Dahmer America&#39;s Most Infamous Serial Killer Trending Topic Alert: Understanding the Dark Side of Human Psychology In recent years, the name...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/what-made-david-dahmer-america-s-most-infamous-serial-killer">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/david-dahmer-a-serial-killer-s-descent-into-madness-and-mayhem" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts1.mm.bing.net/th?id=OIP.L24L5XeFWiQWuoqDJtwGGgHaDe&amp;pid=15.1" alt="David Dahmer A Serial Killer&#39;s Descent Into Madness And Mayhem" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/david-dahmer-a-serial-killer-s-descent-into-madness-and-mayhem" class="u-url p-name">David Dahmer A Serial Killer&#39;s Descent Into Madness And Mayhem</a>
+                </h2>
+                <p class="hg-card-excerpt">The Dark Psyche of David Dahmer: A Serial Killer&#39;s Descent into Madness and Mayhem Why it&#39;s in the Spotlight Now The disturbing case of David Dahmer has once...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/david-dahmer-a-serial-killer-s-descent-into-madness-and-mayhem">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/unmasking-the-monster-behind-one-of-the-most-horrific-serial-killer-cases-in-us-history-david-dahmer" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts1.explicit.bing.net/th?id=OIP.mMFYHNA-z_uTVEKQ1fuhTwHaEK&amp;pid=15.1" alt="Unmasking The Monster Behind One Of The Most Horrific Serial Killer Cases In Us History David Dahmer" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/unmasking-the-monster-behind-one-of-the-most-horrific-serial-killer-cases-in-us-history-david-dahmer" class="u-url p-name">Unmasking The Monster Behind One Of The Most Horrific Serial Killer Cases In Us History David Dahmer</a>
+                </h2>
+                <p class="hg-card-excerpt">Unmasking the Monster Behind One of the Most Horrific Serial Killer Cases in US History: The David Dahmer Case In recent years, true crime documentaries and...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/unmasking-the-monster-behind-one-of-the-most-horrific-serial-killer-cases-in-us-history-david-dahmer">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/kinsey-schofield-s-personal-life-uncovering-her-relationship" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts3.mm.bing.net/th?id=OIP.J86coDYVDol9copQf07OrgHaER&amp;pid=15.1" alt="Kinsey Schofield&#39;s Personal Life: Uncovering Her Relationship" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/kinsey-schofield-s-personal-life-uncovering-her-relationship" class="u-url p-name">Kinsey Schofield&#39;s Personal Life: Uncovering Her Relationship</a>
+                </h2>
+                <p class="hg-card-excerpt">Kinsey Schofield&#39;s Personal Life: Uncovering Her Relationship The entertainment world is always on the pulse of the latest celebrity news, and Kinsey...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/kinsey-schofield-s-personal-life-uncovering-her-relationship">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/meet-the-lucky-man-in-kinsey-schofield-s-love-story" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts1.mm.bing.net/th?id=OIP.-R64T3S0steMxcuNLAMSbwHaEc&amp;pid=15.1" alt="Meet The Lucky Man In Kinsey Schofield&#39;s Love Story" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/meet-the-lucky-man-in-kinsey-schofield-s-love-story" class="u-url p-name">Meet The Lucky Man In Kinsey Schofield&#39;s Love Story</a>
+                </h2>
+                <p class="hg-card-excerpt">Meet the Lucky Man in Kinsey Schofield&#39;s Love Story: Separating Fact from Fiction In recent times, a particular love story has gained significant attention in...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/meet-the-lucky-man-in-kinsey-schofield-s-love-story">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/who-is-kinsey-schofield-s-husband-the-mysterious-answer" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts2.mm.bing.net/th?id=OIP.vsBM2i8bj1HAfZl1Yfz55AHaLH&amp;pid=15.1" alt="Who Is Kinsey Schofield&#39;s Husband? The Mysterious Answer" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/who-is-kinsey-schofield-s-husband-the-mysterious-answer" class="u-url p-name">Who Is Kinsey Schofield&#39;s Husband? The Mysterious Answer</a>
+                </h2>
+                <p class="hg-card-excerpt">Kinsey Schofield&#39;s Husband: Unraveling the Mystery The mysterious case of a celebrity&#39;s husband has taken the internet by storm, with many fans scrambling to...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/who-is-kinsey-schofield-s-husband-the-mysterious-answer">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/kinsey-schofield-spills-the-tea-on-her-husband" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts4.mm.bing.net/th?id=OIP.1cMa3bpnMm0aDVPfgleS6QAAAA&amp;pid=15.1" alt="Kinsey Schofield Spills The Tea On Her Husband" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/kinsey-schofield-spills-the-tea-on-her-husband" class="u-url p-name">Kinsey Schofield Spills The Tea On Her Husband</a>
+                </h2>
+                <p class="hg-card-excerpt">The Rise of a New Era in Relationship Insights Kinsey Schofield Spills the Tea on Her Husband, a phenomenon that has been making headlines in recent times,...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/kinsey-schofield-spills-the-tea-on-her-husband">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="hg-card h-entry">
+            <a class="hg-card-img-wrap" href="https://okaforayo.pages.dev/unlocking-kinsey-schofield-s-marriage-with-her-husband" tabindex="-1">
+                
+                <img class="hg-card-img lazyload" data-src="https://ts3.mm.bing.net/th?id=OIP.qzmUIEetyhrlFdXiO8AY5QAAAA&amp;pid=15.1" alt="Unlocking Kinsey Schofield&#39;s Marriage With Her Husband" width="400" height="220" loading="lazy">
+                
+                <span class="hg-badge">GENERAL</span>
+            </a>
+            <div class="hg-card-body">
+                <h2 class="hg-card-title">
+                    <a href="https://okaforayo.pages.dev/unlocking-kinsey-schofield-s-marriage-with-her-husband" class="u-url p-name">Unlocking Kinsey Schofield&#39;s Marriage With Her Husband</a>
+                </h2>
+                <p class="hg-card-excerpt">Unlocking Kinsey Schofield&#39;s Marriage with Her Husband: A Look Behind the Scenes In recent months, the media has been abuzz with speculation and questions...</p>
+                <div class="hg-card-footer">
+                    <time class="hg-date dt-published" datetime="2026-05-17T17:45:05Z">May 17, 2026</time>
+                    <a class="hg-read" href="https://okaforayo.pages.dev/unlocking-kinsey-schofield-s-marriage-with-her-husband">Read More →</a>
+                </div>
+            </div>
+        </article>
+        
+        
+    </div>
+
+    
+
+    <div class="hg-pagination">
+        
+            <a href="https://okaforayo.pages.dev/page/8.html" class="hg-btn-page">Next Page →</a>
+        
+    </div>
+
+</div>
+
+<style>
+/* ── HOME GRID ── */
+.hg-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:24px;
+}
+@media(max-width:760px){.hg-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.hg-grid{grid-template-columns:1fr}}
+
+.hg-ad-span{grid-column:1/-1}
+
+/* ── CARD ── */
+.hg-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .18s, box-shadow .18s, border-color .18s;
+}
+.hg-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 32px rgba(0,0,0,.4);
+    border-color:var(--border2);
+}
+
+/* ── IMAGE AREA ── */
+.hg-card-img-wrap{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    aspect-ratio:16/9;
+    background:var(--surface2);
+    flex-shrink:0;
+}
+.hg-card-img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .3s;
+    opacity:0;
+}
+.hg-card-img.loaded{opacity:1;transition:opacity .3s,transform .3s}
+.hg-card:hover .hg-card-img{transform:scale(1.04)}
+
+.hg-card-img-placeholder{
+    width:100%;height:100%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--border2);
+}
+
+/* ── BADGE ── */
+.hg-badge{
+    position:absolute;top:10px;left:10px;
+    background:linear-gradient(135deg,var(--accent),var(--purple));
+    color:#fff;
+    font-family:var(--mono);font-size:9px;font-weight:700;
+    letter-spacing:.08em;
+    padding:3px 9px;border-radius:4px;
+}
+
+/* ── CARD BODY ── */
+.hg-card-body{
+    padding:14px 16px 16px;
+    display:flex;flex-direction:column;gap:8px;
+    flex:1;
+}
+.hg-card-title{font-size:14px;font-weight:600;line-height:1.4}
+.hg-card-title a{
+    color:var(--text);
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    transition:color .15s;
+}
+.hg-card:hover .hg-card-title a{color:var(--accent)}
+
+.hg-card-excerpt{
+    font-size:12px;color:var(--muted2);line-height:1.6;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    flex:1;
+}
+
+/* ── FOOTER ── */
+.hg-card-footer{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    margin-top:auto;
+}
+.hg-date{
+    font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em;
+}
+.hg-read{
+    font-family:var(--mono);font-size:10px;font-weight:700;
+    color:var(--accent);letter-spacing:.04em;
+    transition:letter-spacing .15s;white-space:nowrap;
+}
+.hg-read:hover{letter-spacing:.09em}
+
+/* ── PAGINATION ── */
+.hg-pagination{text-align:center;margin-top:8px}
+.hg-btn-page{
+    display:inline-block;
+    background:var(--surface2);border:1px solid var(--border2);
+    color:var(--muted2);
+    padding:10px 32px;border-radius:8px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    transition:all .2s;
+}
+.hg-btn-page:hover{border-color:var(--accent);color:var(--accent)}
+.hg-btn-disabled{opacity:.4;cursor:not-allowed}
+</style>
+
+        </section>
+
+        <aside id="sidebar-wrap">
+            <div class="sidebar section sidebar-sticky" id="sidebar">
+                
+                <div class="sidebar-widget widget HTML">
+                    <h2 class="title">Popular Posts</h2>
+                    <div class="widget-content popular-posts">
+                        <ul>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">01</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://okaforayo.pages.dev/step-inside-the-creepy-realm-of-the-gore-centers-darkest-legends">Step Inside The Creepy Realm Of The Gore Center&#39;s Darkest Legends</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">02</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://okaforayo.pages.dev/the-gore-center-where-history-meets-unsettling-legend">The Gore Center: Where History Meets Unsettling Legend</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">03</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://okaforayo.pages.dev/gore-center-exposing-the-disturbing-truth-behind-the-haunting-site">Gore Center: Exposing The Disturbing Truth Behind The...</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">04</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://okaforayo.pages.dev/mike-wolfes-secret-to-unearthing-americas-forgotten-treasures-and-hidden-gems">Mike Wolfe&#39;s Secret To Unearthing America&#39;s Forgotten...</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                                
+                                <li>
+                                    <span class="pop-num">05</span>
+                                    <div class="pop-content">
+                                        <h3><a href="https://okaforayo.pages.dev/the-surprising-story-of-how-mike-wolfe-fell-in-love-with-vintage-america">The Surprising Story Of How Mike Wolfe Fell In Love With...</a></h3>
+                                        <div class="pop-meta">news · May 19, 2026</div>
+                                    </div>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nav widget -->
+                <div class="sidebar-widget widget HTML">
+                    <h2 class="title">Navigation</h2>
+                    <nav style="display:flex;flex-direction:column;gap:4px">
+                        <a href="https://okaforayo.pages.dev/" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Home</a>
+                        <a href="https://okaforayo.pages.dev/page/contact" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Contact</a>
+                        <a href="https://okaforayo.pages.dev/page/privacy" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;Privacy</a>
+                        <a href="https://okaforayo.pages.dev/page/about" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;About</a>
+                        <a href="https://okaforayo.pages.dev/page/dmca" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.04em;transition:all .15s;border:1px solid transparent;text-transform:uppercase" onmouseover="this.style.color='var(--accent)';this.style.background='rgba(79,156,249,.08)';this.style.borderColor='rgba(79,156,249,.15)'" onmouseout="this.style.color='';this.style.background='';this.style.borderColor=''">→ &nbsp;DMCA</a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    
+
+    <footer id="footer-outer">
+        <div id="footer-content">
+            <div class="footer-text">&copy; 2026 PUFFIN FOUNDATION RESOURCES · ALL RIGHTS RESERVED</div>
+            <div class="footer-links">
+                <a href="https://okaforayo.pages.dev/">Home</a>
+                <a href="https://okaforayo.pages.dev/page/contact">Contact</a>
+                <a href="https://okaforayo.pages.dev/page/privacy">Privacy Policy</a>
+<a href="https://okaforayo.pages.dev/page/about">About</a>
+                <a href="https://okaforayo.pages.dev/page/dmca">DMCA</a>
+                <a href="https://okaforayo.pages.dev/sitemap.html">Sitemap HTML</a>
+                <a href="https://okaforayo.pages.dev/sitemap.xml">Sitemap XML</a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function decodeBase64(value) {
+                try { return window.atob(value || ''); } catch (e) { return ''; }
+            }
+            function mountHtml(target, html) {
+                if (!target || typeof html !== 'string') return;
+                target.innerHTML = html;
+                Array.from(target.querySelectorAll("script")).forEach(function(oldScript) {
+                    var newScript = document.createElement("script");
+                    Array.from(oldScript.attributes).forEach(function(attr) { newScript.setAttribute(attr.name, attr.value); });
+                    if (oldScript.textContent) newScript.textContent = oldScript.textContent;
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            }
+            function initLazyAdSlots() {
+                var adSlots = Array.from(document.querySelectorAll('[data-lazy-ad][data-ad-html]'));
+                if (adSlots.length === 0) return;
+                if ('IntersectionObserver' in window) {
+                    var observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (!entry.isIntersecting) return;
+                            var slot = entry.target;
+                            mountHtml(slot, decodeBase64(slot.dataset.adHtml || ''));
+                            observer.unobserve(slot);
+                        });
+                    }, { rootMargin: '200px 0px' });
+                    adSlots.forEach(function(slot) { observer.observe(slot); });
+                } else {
+                    adSlots.forEach(function(slot) { mountHtml(slot, decodeBase64(slot.dataset.adHtml || '')); });
+                }
+            }
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            if (lazyImage.dataset.src) {
+                                lazyImage.src = lazyImage.dataset.src;
+                                lazyImage.onload = function() { lazyImage.classList.add("loaded"); };
+                            }
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                lazyImages.forEach(function(lazyImage) { lazyImageObserver.observe(lazyImage); });
+            } else {
+                lazyImages.forEach(function(lazyImage) {
+                    if (lazyImage.dataset.src) { lazyImage.src = lazyImage.dataset.src; lazyImage.classList.add("loaded"); }
+                });
+            }
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(initLazyAdSlots, { timeout: 1800 });
+            } else { window.setTimeout(initLazyAdSlots, 250); }
+
+            var trackerNode = document.getElementById('js-tracker-slot');
+            if (trackerNode && trackerNode.dataset.trackerHtml) {
+                var runTracker = function() { mountHtml(trackerNode, decodeBase64(trackerNode.dataset.trackerHtml || '')); };
+                if ('requestIdleCallback' in window) { window.requestIdleCallback(runTracker, { timeout: 2500 }); }
+                else { window.setTimeout(runTracker, 1200); }
+            }
+
+            var floatingHtml = "";
+            var floatingRoot = document.getElementById('rudi-floating-ad');
+            var floatingContent = document.getElementById('rudi-floating-ad-content');
+            var floatingClose = document.getElementById('rudi-floating-ad-close');
+            if (floatingRoot && floatingContent && typeof floatingHtml === 'string' && floatingHtml.trim() !== '') {
+                mountHtml(floatingContent, floatingHtml);
+                floatingRoot.classList.remove('hidden');
+                if (floatingClose) { floatingClose.addEventListener('click', function() { floatingRoot.classList.add('hidden'); }); }
+            }
+
+            var sosHtml = "";
+            var sosUrl = "";
+            if (typeof sosHtml === 'string' && sosHtml.trim() !== '') {
+                var sosHolder = document.createElement('div');
+                sosHolder.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;text-align:center;';
+                document.body.appendChild(sosHolder);
+                mountHtml(sosHolder, sosHtml);
+            } else if (typeof sosUrl === 'string' && sosUrl.trim() !== '') {
+                if (!document.querySelector('script[src="' + sosUrl + '"]')) {
+                    var sosScript = document.createElement('script');
+                    sosScript.src = sosUrl; sosScript.async = true;
+                    document.body.appendChild(sosScript);
+                }
+            }
+        });
+    </script>
+
+    
+
+</body>
+</html>
